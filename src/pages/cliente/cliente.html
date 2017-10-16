@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button secondary menuToggle>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Cliente</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button (click)="navigateAddClientePage()">Adicionar</button>
+  <button ion-button (click)="navigateClienteListaPage()">Listar</button>
+  <button ion-button>Excluir</button>
+  <button ion-button>Exportar</button>
+</ion-content>

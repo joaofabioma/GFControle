@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary" name="topo">
+    <ion-title>Adicionar Item</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Nome Item</ion-label>
+    <ion-input type="text" [(ngModel)]="shoppingItem.itemName"></ion-input>
+  </ion-item>  
+
+  <ion-item>
+    <ion-label floating>Quantidade</ion-label>
+    <ion-input type="number" [(ngModel)]="shoppingItem.itemNumber"></ion-input>
+  </ion-item>    
+
+  <ion-label ion-button block (click)="addShoppingItem(shoppingItem)">Salvar</ion-label>
+</ion-content>
