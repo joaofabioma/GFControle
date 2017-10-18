@@ -1,16 +1,19 @@
 <ion-header>
     <ion-navbar>
+        <ion-buttons end>
+            <button ion-button secondary menuToggle>
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-title>Clientes</ion-title>
     </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <ion-searchbar (ionInput)="getClientes($event)"></ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let lista of clienteLista | async" (click)="selectClienteLista(lista)">
             <ion-avatar item-left>
-                <!-- <img [src]="lista.iAvatar"> -->
                 <img [src]="lista.iAvatar">
             </ion-avatar>
             <h2>{{ lista.iNome }}</h2>
@@ -18,7 +21,7 @@
                 E-mail: {{ lista.iEmail }}
             </p>
             <p>
-                Data Cadastro: {{ lista.iDataHoraCadastro | date: 'dd/MM/yyyy H:mm'  }}
+                Data Cadastro: {{ lista.iDataHoraCadastro | date: 'dd/MM/yyyy H:mm' }}
             </p>
         </ion-item>
     </ion-list>

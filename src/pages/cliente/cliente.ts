@@ -22,9 +22,8 @@ export class ClientePage {
   navigateClienteListaPage(){
     this.navCtrl.push(ClienteListaPage);
   }
-  
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad ClientePage');
-  // }
+  fechaCliente(){
+    this.navCtrl.pop();
+  }
 
 }

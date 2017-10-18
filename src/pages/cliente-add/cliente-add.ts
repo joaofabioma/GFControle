@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { ClienteItem } from '../../models/cliente-item/cliente-item-interface'; 
 import { ToastController } from 'ionic-angular';
 import { ClientePage } from '../cliente/cliente';
+import { PaginaPrincipal } from '../principal/principal';
 import { Camera } from 'ionic-native';
 import firebase from 'firebase';
 
@@ -45,6 +46,9 @@ export class AddClientePage {
   
   navigateClientePage(){
     this.navCtrl.push(ClientePage);
+  }
+  navigatePaginaPrincipal(){
+    this.navCtrl.push(PaginaPrincipal);
   }
   addClienteItem(clienteItem: ClienteItem) {
     this.clienteItemRef$.push({
@@ -87,8 +91,9 @@ export class AddClientePage {
   
     this.clienteItem = {} as ClienteItem;
     this.mensagemSalvo();
-    this.navCtrl.pop();
-    this.navigateClientePage();
+    // this.navCtrl.pop();
+    // this.navigatePaginaPrincipal();
+    this.navCtrl.setRoot(PaginaPrincipal);
   }
   
   selectPhoto(): void {

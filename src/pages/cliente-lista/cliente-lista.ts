@@ -4,6 +4,7 @@ import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { ClienteItem } from '../../models/cliente-item/cliente-item-interface';
+import firebase from 'firebase';
 
 @Component({
   selector: 'page-cliente-lista',
@@ -13,9 +14,12 @@ export class ClienteListaPage {
   
 	clienteListaRef$: AngularFireList<ClienteItem>;
 	clienteLista: Observable<ClienteItem[]>;
+	
 	buscaCliente: string = '';
-  clientes: string[];
-
+	clientes: string[];
+	clientesCarregadosLista:Array<any>;
+	
+	clienteRef: firebase.database.Reference;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -24,21 +28,9 @@ export class ClienteListaPage {
   {
     this.clienteListaRef$ = this.database.list('cliente');
 		this.clienteLista = this.database.list('cliente').valueChanges();
-		console.log(this.clienteListaRef$);
-		console.log(this.clienteLista);
-  }
-  
-	getClientes(ev: any) {
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.clientes = this.clientes.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }
+		this.clienteRef = firebase.database().ref('cliente');		
+	}
+		
   selectClienteLista(clienteItem: ClienteItem) {
     this.actionSheetCtrl.create({
 			title: clienteItem.iNome.toString(),
@@ -53,7 +45,7 @@ export class ClienteListaPage {
 					text: 'Apagar',
 					role: 'destructive',
 					handler: () => {
-						this.clienteListaRef$.remove(clienteItem.$key);
+						// this.clienteListaRef$.remove(clienteItem.$key);
 					},
 				},
 				{
