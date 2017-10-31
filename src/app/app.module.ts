@@ -15,6 +15,7 @@ import { ClientePage } from '../pages/cliente/cliente';
 import { AddClientePage } from '../pages/cliente-add/cliente-add';
 import { ClienteListaPage } from '../pages/cliente-lista/cliente-lista';
 import { ProdutoPage } from '../pages/produto/produto';
+import { ProdutoListaPage } from '../pages/produto-lista/produto-lista';
 import { VendaPage } from '../pages/venda/venda';
 import { SobrePage } from '../pages/sobre/sobre';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
@@ -34,6 +35,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
     VendaPage, 
     ProdutoPage,
     SideMenuContentComponent,
+    ProdutoListaPage,
     
   ],
   imports: [
@@ -55,6 +57,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
     SobrePage,
     VendaPage, 
     ProdutoPage,
+    ProdutoListaPage,
     
   ],
   providers: [

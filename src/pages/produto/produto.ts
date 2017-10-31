@@ -32,6 +32,7 @@ export class ProdutoPage {
       iGrupo: this.produtoItem.iGrupo,
       iCor: this.produtoItem.iCor,
       iMarca: this.produtoItem.iMarca,
+      iDescricao: this.produtoItem.iDescricao,
       iDescricaoReduzida: this.produtoItem.iDescricaoReduzida,
       iNumero: this.produtoItem.iNumero,
       iLocalEstoque: this.produtoItem.iLocalEstoque,

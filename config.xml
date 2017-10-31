@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.joaofabio.GF_Controle" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.joaofabio.GF_Controle" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>GFControle</name>
     <description>GF Controle, desenvolvimento projeto para portifolio</description>
     <author email="amarall.jf@gmail.com" href="http://ionicframework.com/">Joao Fabio Team</author>
@@ -77,10 +77,10 @@
     </platform>
     <engine name="android" spec="^6.3.0" />
     <engine name="ios" spec="^4.5.1" />
-    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.15" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="git+https://github.com/apache/cordova-plugin-statusbar.git" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
 </widget>

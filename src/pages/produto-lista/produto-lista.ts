@@ -1,25 +1,60 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { ProdutoItem } from '../../models/produto-item/produto-item.interface';
+import firebase from 'firebase';
 
-/**
- * Generated class for the ProdutoListaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-produto-lista',
   templateUrl: 'produto-lista.html',
 })
 export class ProdutoListaPage {
+	produtoListaRef$: AngularFireList<ProdutoItem>;
+	produtoLista: Observable<ProdutoItem[]>;
+	
+	buscaProduto: string = '';
+	produtos: string[];
+	produtosCarregadosLista:Array<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	produtoRef: firebase.database.Reference;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private database: AngularFireDatabase,
+		private actionSheetCtrl: ActionSheetController) {
+      this.produtoListaRef$ = this.database.list('produto');
+      this.produtoLista = this.database.list('produto').valueChanges();
+      this.produtoRef = firebase.database().ref('produto');	
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProdutoListaPage');
-  }
+  selectProdutoLista(produtoItem: ProdutoItem) {
+    this.actionSheetCtrl.create({
+			title: produtoItem.iDescricao.toString(),
+			buttons: [
+				{
+					text: 'Editar',
+					handler: () => {
+						//this.navCtrl.push(EditShoppingItemPage, { shoppingItemId: clienteItem.$key });
+					}
+				},
+				{
+					text: 'Apagar',
+					role: 'destructive',
+					handler: () => {
+						// this.clienteListaRef$.remove(clienteItem.$key);
+					},
+				},
+				{
+					text: 'Cancelar',
+					role: 'cancel',
+					handler: () => {
+						//console.log('The user has selected the cancel button');
+					}
+				}
+			]	
+		}).present();
 
+    this.navCtrl.pop();
+  }
 }
