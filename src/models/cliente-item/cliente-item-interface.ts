@@ -5,6 +5,6 @@ export interface ClienteItem {
     iCPF: string;
     iLogradouro: string;
     iEmail: string;
-    iDataUltimaCompra: Date;
+    iDataUltimaCompra: string;
     iDataHoraCadastro: string;
 }

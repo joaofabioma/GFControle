@@ -35,3 +35,4 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 src/app/firebase.credentials.ts
+src/app/firebase.credentials

@@ -10,6 +10,7 @@ import { PaginaPrincipal } from '../pages/principal/principal';
 // import { ClientePage }  from '../pages/cliente/cliente';
 import { AddClientePage } from '../pages/cliente-add/cliente-add';
 import { ClienteListaPage } from '../pages/cliente-lista/cliente-lista';
+import { ProdutoPage } from '../pages/produto/produto';
 
 import { SobrePage }  from '../pages/sobre/sobre';
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
@@ -48,16 +49,6 @@ export class MyApp {
       private menuCtrl: MenuController
     ) 
   {
-    // this.pages = [
-    //   { title: 'Cadastro Clientes', component: ClientePage },
-    //   { title: 'Produto', component: ProdutoPage },
-    //   { title: 'Venda', component: VendaPage },
-    //   { title: 'Sobre', component: SobrePage },
-    // ];
-    // platform.ready().then(() => {
-    //   statusBar.styleDefault();
-    //   splashScreen.hide();
-    // });
     this.initializeApp();
   }
   
@@ -69,14 +60,6 @@ export class MyApp {
 			this.initializeOptions();
 		});
   }
-
-//   openPage(page) {
-//     this.nav.setRoot(page.component);
-// //   }
-//   menuItemHandler(): void {
-//     this.showSubmenu = !this.showSubmenu;
-//   }
-
    private initializeOptions(): void {
      this.options = new Array<MenuOptionModel>();    
 		this.options.push({
@@ -99,6 +82,21 @@ export class MyApp {
 					iconName: 'ios-list-box-outline',
 					displayName: 'Listar',
 					component: ClienteListaPage
+				},
+			]
+		});
+		this.options.push({
+			displayName: 'Produto',
+			subItems: [
+				{
+					iconName: 'cube',
+					displayName: 'Cadastrar',
+					component: ProdutoPage
+				},
+				{
+					iconName: 'ios-list-box-outline',
+					displayName: 'Listar',
+					component: ProdutoPage
 				},
 			]
 		});

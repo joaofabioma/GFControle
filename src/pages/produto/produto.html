@@ -5,11 +5,63 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Produto</ion-title>
+    <ion-title>Cadastrar Produto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-item>
+    <ion-label floating>Grupo</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iGrupo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Descrição</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iDescricao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Descrição Reduzida</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iDescricaoReduzida"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Coleção</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iColecao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Numero</ion-label>
+    <ion-input type="number" [(ngModel)]="produtoItem.iNumero"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Cor</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iCor"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Tipo</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iTipo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Marca</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iMarca"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Local Estoque</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iLocalEstoque"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Valor Venda</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iValor"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Desconto</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iDesconto"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Desconto</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iDesconto"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Quantidade Estoque</ion-label>
+    <ion-input type="text" [(ngModel)]="produtoItem.iQtdEstoque"></ion-input>
+  </ion-item>
+  <ion-label ion-button block (click)="addProdutoItem(produtoItem)">Salvar</ion-label>
 </ion-content>
