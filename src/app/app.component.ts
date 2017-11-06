@@ -5,13 +5,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PaginaPrincipal } from '../pages/principal/principal';
-// import { ProdutoPage } from '../pages/produto/produto';
-// import { VendaPage } from '../pages/venda/venda';
-// import { ClientePage }  from '../pages/cliente/cliente';
+
 import { AddClientePage } from '../pages/cliente-add/cliente-add';
 import { ClienteListaPage } from '../pages/cliente-lista/cliente-lista';
 import { ProdutoPage } from '../pages/produto/produto';
 import { ProdutoListaPage } from '../pages/produto-lista/produto-lista';
+import { LoginPage } from '../pages/login/login';
 
 import { SobrePage }  from '../pages/sobre/sobre';
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
@@ -20,7 +19,7 @@ import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-c
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = PaginaPrincipal;
+  rootPage:any = LoginPage;
   @ViewChild(Nav) navCtrl: Nav;
 
 	// Get the instance to call the public methods
@@ -118,9 +117,10 @@ export class MyApp {
 				{
 					iconName: 'log-in',
 					displayName: 'Login',
-					custom: {
+					component: LoginPage
+					/*custom: {
 						isLogin: true
-					}
+					}*/
 				},
 				{
 					iconName: 'log-out',

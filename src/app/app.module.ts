@@ -18,16 +18,17 @@ import { ProdutoPage } from '../pages/produto/produto';
 import { ProdutoListaPage } from '../pages/produto-lista/produto-lista';
 import { VendaPage } from '../pages/venda/venda';
 import { SobrePage } from '../pages/sobre/sobre';
+import { LoginPage } from '../pages/login/login';
+
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+import { AuthProvider } from '../providers/auth/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 @NgModule({
   declarations: [
     MyApp,
     PaginaPrincipal,
-    // ShoppingListPage,
-    // AddShoppingPage,
-    // EditShoppingItemPage,
     ClientePage,
     AddClientePage,
     ClienteListaPage,
@@ -36,7 +37,8 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
     ProdutoPage,
     SideMenuContentComponent,
     ProdutoListaPage,
-    
+    LoginPage,
+
   ],
   imports: [
     BrowserModule,
@@ -48,9 +50,6 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
   entryComponents: [
     MyApp,
     PaginaPrincipal,
-    // ShoppingListPage,
-    // AddShoppingPage,
-    // EditShoppingItemPage,
     ClientePage,
     AddClientePage,
     ClienteListaPage,
@@ -58,12 +57,15 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
     VendaPage, 
     ProdutoPage,
     ProdutoListaPage,
-    
+    LoginPage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    AngularFireAuth
   ]
 })
 export class AppModule {}

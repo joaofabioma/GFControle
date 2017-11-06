@@ -6,12 +6,11 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'sobre.html',
 })
 export class SobrePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SobrePage');
-  }
-
+  nome: string = 'GF_Controle';
+  pacote: string = 'br.com.joaofabio.GF_Controle';
+  versao: string = '0.0.5';
+  
+  constructor(
+      public navCtrl: NavController, public navParams: NavParams) {}  
+  
 }
