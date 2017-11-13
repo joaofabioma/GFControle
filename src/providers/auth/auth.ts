@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 export class AuthProvider {
 
   constructor(public http: Http) {
-    // console.log('Hello AuthProvider Provider');
   }
 
 }

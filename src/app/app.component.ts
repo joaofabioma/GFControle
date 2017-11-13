@@ -2,7 +2,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+// import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PaginaPrincipal } from '../pages/principal/principal';
 //Paginas
@@ -41,7 +41,7 @@ export class MyApp {
   constructor(
       private platform: Platform,
       private statusBar: StatusBar,
-      private splashScreen: SplashScreen,
+    //   private splashScreen: SplashScreen,
       private alertCtrl: AlertController,
       private menuCtrl: MenuController
     ) 
@@ -52,7 +52,7 @@ export class MyApp {
 	initializeApp() {
 		this.platform.ready().then(() => {
 			this.statusBar.styleLightContent();
-			this.splashScreen.hide();
+			// this.splashScreen.hide();
 
 			this.initializeOptions();
 		});
