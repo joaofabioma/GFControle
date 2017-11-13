@@ -1,19 +1,19 @@
-import { SideMenuSettings } from '../shared/side-menu-content/side-menu-content.component';
+
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PaginaPrincipal } from '../pages/principal/principal';
-
+//Paginas
 import { AddClientePage } from '../pages/cliente-add/cliente-add';
 import { ClienteListaPage } from '../pages/cliente-lista/cliente-lista';
 import { ProdutoPage } from '../pages/produto/produto';
 import { ProdutoListaPage } from '../pages/produto-lista/produto-lista';
 import { LoginPage } from '../pages/login/login';
-
 import { SobrePage }  from '../pages/sobre/sobre';
-import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+//Menu
+import { MenuOptionModel, SideMenuContentComponent, SideMenuSettings } from '../shared/side-menu-content/side-menu-content.component';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,14 +22,11 @@ export class MyApp {
   rootPage:any = LoginPage;
   @ViewChild(Nav) navCtrl: Nav;
 
-	// Get the instance to call the public methods
   @ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
   showSubmenu: boolean = false;
 
-	// Options to show in the SideMenuComponent
   public options: Array<MenuOptionModel>;
   
-	// Settings for the SideMenuComponent
   public sideMenuSettings: SideMenuSettings = {
 		accordionMode: true,
 		showSelectedOption: true,
