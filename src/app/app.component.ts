@@ -165,7 +165,6 @@ export class MyApp {
 	}
 
 	public collapseMenuOptions(): void {
-		// Collapse all the options
 		this.sideMenu.collapseAllOptions();
 	}
 
